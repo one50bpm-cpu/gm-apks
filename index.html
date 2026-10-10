@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GM APKs</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --card-border: #2a2f3a;
+    --text: #e8eaed;
+    --muted: #9aa3b2;
+    --accent: #4f9dff;
+    --accent-ink: #ffffff;
+  }
+  :root:not([data-theme="dark"]) {
+    @media (prefers-color-scheme: light) {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --card-border: #e2e5ea;
+      --text: #1a1d24;
+      --muted: #5a6474;
+      --accent: #1565d8;
+      --accent-ink: #ffffff;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --card-border: #e2e5ea;
+    --text: #1a1d24;
+    --muted: #5a6474;
+    --accent: #1565d8;
+    --accent-ink: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    padding: 0 16px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 0 64px; }
+  header { margin-bottom: 32px; }
+  h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .list { display: grid; gap: 14px; }
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .meta { min-width: 0; }
+  .name { font-weight: 600; font-size: 1.05rem; word-break: break-word; }
+  .size { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+  .dl {
+    flex: none;
+    text-decoration: none;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 9px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .dl:hover { filter: brightness(1.08); }
+  footer { margin-top: 36px; color: var(--muted); font-size: 0.8rem; text-align: center; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>GM APKs</h1>
+      <p class="sub">Android APK downloads. Tap an app to download the .apk file.</p>
+    </header>
+
+    <div class="list">
+      <div class="card">
+        <div class="meta">
+          <div class="name">CinemaHQ</div>
+          <div class="size">v8.5 &middot; 52.5 MB</div>
+        </div>
+        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/CinemaHQ-v8.5.apk">Download</a>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <div class="name">Netfly (TV)</div>
+          <div class="size">v3.0.4 &middot; 62.6 MB</div>
+        </div>
+        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Netfly-v3.0.4-TV.apk">Download</a>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <div class="name">Reezn</div>
+          <div class="size">v2.0.20 &middot; 33.8 MB</div>
+        </div>
+        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Reezn-v2.0.20.apk">Download</a>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <div class="name">Downloader</div>
+          <div class="size">v2.0.4 &middot; 10.4 MB</div>
+        </div>
+        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Downloader-v2.0.4.apk">Download</a>
+      </div>
+    </div>
+
+    <footer>
+      Hosted on <a href="https://github.com/one50bpm-cpu/gm-apks">GitHub</a>.
+    </footer>
+  </div>
+</body>
+</html>
