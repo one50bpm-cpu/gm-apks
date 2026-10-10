@@ -11,7 +11,8 @@
       "latest": {
         "version": "8.5",
         "url": "https://chq-api.ddns.me/chqdl/release.apk"
-      }
+      },
+      "direct": "https://chq-api.ddns.me/chqdl/release.apk"
     },
     {
       "id": "netfly",
@@ -23,7 +24,8 @@
       "latest": {
         "version": "3.0.4",
         "url": "https://netflyapp.com/file/netfly_tv.apk"
-      }
+      },
+      "direct": "https://netflyapp.com/file/netfly_tv.apk"
     },
     {
       "id": "reezn",
@@ -35,7 +37,8 @@
       "latest": {
         "version": "2.0.20",
         "url": "https://reezntvapp.com/download"
-      }
+      },
+      "direct": "https://github.com/bedevlab/rdownload/releases/download/update/Reezn.apk"
     },
     {
       "id": "smarttube",
@@ -43,11 +46,12 @@
       "version": "32.56",
       "file": "SmartTube-v32.56.apk",
       "size": 25046686,
-      "official": "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk",
+      "official": "https://github.com/yuliskov/SmartTube/releases/latest",
       "latest": {
         "version": "32.56",
         "url": "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk"
-      }
+      },
+      "direct": "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk"
     },
     {
       "id": "projectivy-launcher",
