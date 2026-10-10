@@ -120,7 +120,10 @@ var FALLBACK = {
     { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "https://reezntvapp.com/download",                    direct: "https://github.com/bedevlab/rdownload/releases/download/update/Reezn.apk",             latest: { version: "2.0.20", url: "https://reezntvapp.com/download" } },
     { name: "SmartTube",           version: "32.56",  file: "SmartTube-v32.56.apk",         size: 25046686, official: "https://github.com/yuliskov/SmartTube/releases/latest", direct: "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk", latest: { version: "32.56",  url: "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk" } },
     { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "",                                                                     latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
-    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "",                                                                     latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
+    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "",                                                                     latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } },
+    { name: "Kodi",                version: "21.3",   file: "Kodi-v21.3-Omega.apk",         size: 67832726, official: "https://kodi.tv/download/",                                           latest: { version: "21.3",   url: "https://kodi.tv/download/" } },
+    { name: "SportzXLive",         version: "3.1",    file: "",                             size: 0,        official: "https://sportzxlive.com/download/", direct: "https://pub-da7a734dcc5649388b83d515f2c87182.r2.dev/SportzX_3.1v.apk", latest: { version: "3.1", url: "https://sportzxlive.com/download/" } },
+    { name: "Proton VPN",          version: "5.20.57.0", file: "",                          size: 0,        official: "https://protonvpn.com/download-android", direct: "https://github.com/ProtonVPN/android-app/releases/latest", latest: { version: "5.20.57.0", url: "https://protonvpn.com/download-android" } }
   ]
 };
 
@@ -169,7 +172,7 @@ function render(data) {
           '<div class="name">' + esc(app.name) + '</div>' +
           (app.size ? '<div class="size">' + fmtSize(app.size) + '</div>' : '') +
           '<div class="vers">' +
-            '<div class="vline"><span class="lbl">Local version:</span> <b>v' + esc(app.version) + '</b></div>' +
+            (app.file ? '<div class="vline"><span class="lbl">Local version:</span> <b>v' + esc(app.version) + '</b></div>' : '') +
             '<div class="vline"><span class="lbl">Official version:</span> ' +
               '<b class="ov' + (hasUpdate ? ' new' : '') + '">v' + esc(latestVer) + '</b>' +
               (hasUpdate ? ' <span class="newer">NEWER</span>' : '') +
@@ -178,7 +181,7 @@ function render(data) {
         '</div>' +
       '</div>' +
       '<div class="actions">' +
-        '<a class="btn dl" href="' + esc(app.file) + '">Download<br>Local</a>' +
+        (app.file ? '<a class="btn dl" href="' + esc(app.file) + '">Download<br>Local</a>' : '') +
         (official ? '<a class="btn web-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Official<br>Website</a>' : '') +
         (app.direct ? '<a class="btn direct-btn" href="' + esc(app.direct) + '" target="_blank" rel="noopener">Try Direct<br>Download</a>' : '') +
       '</div>';

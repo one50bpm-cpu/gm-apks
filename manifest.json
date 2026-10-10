@@ -76,6 +76,44 @@
         "version": "1.1.9",
         "url": "ProjectivyIconPack-v1.1.9.apk"
       }
+    },
+    {
+      "id": "kodi",
+      "name": "Kodi",
+      "version": "21.3",
+      "file": "Kodi-v21.3-Omega.apk",
+      "size": 67832726,
+      "official": "https://kodi.tv/download/",
+      "latest": {
+        "version": "21.3",
+        "url": "https://kodi.tv/download/"
+      }
+    },
+    {
+      "id": "sportzxlive",
+      "name": "SportzXLive",
+      "version": "3.1",
+      "file": "",
+      "size": 0,
+      "official": "https://sportzxlive.com/download/",
+      "direct": "https://pub-da7a734dcc5649388b83d515f2c87182.r2.dev/SportzX_3.1v.apk",
+      "latest": {
+        "version": "3.1",
+        "url": "https://sportzxlive.com/download/"
+      }
+    },
+    {
+      "id": "protonvpn",
+      "name": "Proton VPN",
+      "version": "5.20.57.0",
+      "file": "",
+      "size": 0,
+      "official": "https://protonvpn.com/download-android",
+      "direct": "https://github.com/ProtonVPN/android-app/releases/latest",
+      "latest": {
+        "version": "5.20.57.0",
+        "url": "https://protonvpn.com/download-android"
+      }
     }
   ]
 }
