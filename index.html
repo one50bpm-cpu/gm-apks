@@ -75,9 +75,9 @@
   .actions { display: flex; flex-wrap: wrap; gap: 7px; }
   .btn {
     text-decoration: none; text-align: center; font-family: var(--mono); font-weight: 600;
-    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
-    padding: 7px 13px; border-radius: 7px; transition: all 0.2s; cursor: pointer;
-    border: 1px solid transparent;
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.25;
+    padding: 6px 12px; border-radius: 7px; transition: all 0.2s; cursor: pointer;
+    border: 1px solid transparent; min-width: 88px;
   }
   .dl { background: var(--accent); color: #04141a; }
   .dl:hover { filter: brightness(1.1); }
@@ -175,9 +175,9 @@ function render(data) {
         '</div>' +
       '</div>' +
       '<div class="actions">' +
-        '<a class="btn dl" href="' + esc(app.file) + '">Download Local</a>' +
-        (official ? '<a class="btn web-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Visit APK Website</a>' : '') +
-        (app.direct ? '<a class="btn direct-btn" href="' + esc(app.direct) + '" target="_blank" rel="noopener">&#8595; Try Direct Download</a>' : '') +
+        '<a class="btn dl" href="' + esc(app.file) + '">Download<br>Local</a>' +
+        (official ? '<a class="btn web-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Official<br>Website</a>' : '') +
+        (app.direct ? '<a class="btn direct-btn" href="' + esc(app.direct) + '" target="_blank" rel="noopener">Try Direct<br>Download</a>' : '') +
       '</div>';
 
     list.appendChild(card);
