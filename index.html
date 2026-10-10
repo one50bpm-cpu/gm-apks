@@ -39,6 +39,8 @@
     letter-spacing: -0.5px; color: #fff; line-height: 1.05; margin: 0;
   }
   h1 .code { color: var(--accent); font-weight: 600; }
+  h1 .logo { height: 0.92em; width: auto; vertical-align: -0.16em; margin-right: 8px;
+    filter: drop-shadow(0 0 6px rgba(34,211,238,0.35)); }
   .status {
     color: var(--muted2); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
     margin: 0 0 18px; min-height: 1em; text-align: center;
@@ -96,7 +98,18 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>📺 GM apks <span class="code">&middot; 7934617</span></h1>
+      <h1><svg class="logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="gmg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee"/>
+            <stop offset="1" stop-color="#10b981"/>
+          </linearGradient>
+        </defs>
+        <rect x="3" y="3" width="42" height="42" rx="12" fill="#0c1018" stroke="url(#gmg)" stroke-width="2.5"/>
+        <path d="M24 12 V27" fill="none" stroke="url(#gmg)" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M16.5 20.5 L24 28 L31.5 20.5" fill="none" stroke="url(#gmg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 34 H34" fill="none" stroke="url(#gmg)" stroke-width="3.6" stroke-linecap="round"/>
+      </svg> GM apks <span class="code">&middot; 7934617</span></h1>
     </header>
 
     <div class="list" id="list"></div>
