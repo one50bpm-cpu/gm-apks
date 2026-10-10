@@ -110,12 +110,12 @@
 // (e.g. opened as a local file). manifest.json, when reachable, overrides this.
 var FALLBACK = {
   apps: [
-    { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, official: "https://cinemahq.app",                                                 latest: { version: "8.5",    url: "CinemaHQ-v8.5.apk" } },
-    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "https://netflyapp.com",                                                latest: { version: "3.0.4",  url: "Netfly-v3.0.4-TV.apk" } },
-    { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "https://reezntvapp.com",                                               latest: { version: "2.0.20", url: "Reezn-v2.0.20.apk" } },
-    { name: "SmartTube",           version: "32.56",  file: "SmartTube-v32.56.apk",         size: 25046686, official: "https://github.com/yuliskov/SmartTube/releases/latest",                latest: { version: "32.56",  url: "SmartTube-v32.56.apk" } },
-    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "https://play.google.com/store/apps/details?id=com.spocky.projengmenu", latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
-    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "https://github.com/SicMundus86/ProjectivyIconPack",                      latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
+    { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, official: "https://cinemahq.app",                                                 latest: { version: "8.5",    url: "https://chq-api.ddns.me/chqdl/release.apk" } },
+    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "https://netflyapp.com",                                                latest: { version: "3.0.5",  url: "https://netflyapp.com/file/netfly_tv.apk" } },
+    { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "https://reezntvapp.com",                                               latest: { version: "2.0.20", url: "https://reezntvapp.com" } },
+    { name: "SmartTube",           version: "32.56",  file: "SmartTube-v32.56.apk",         size: 25046686, official: "https://github.com/yuliskov/SmartTube/releases/latest",                latest: { version: "32.56",  url: "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk" } },
+    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "https://play.google.com/store/apps/details?id=com.spocky.projengmenu", latest: { version: "4.72",   url: "https://play.google.com/store/apps/details?id=com.spocky.projengmenu" } },
+    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "https://github.com/SicMundus86/ProjectivyIconPack",                      latest: { version: "1.1.9",  url: "https://github.com/SicMundus86/ProjectivyIconPack/raw/refs/heads/main/Latestrelease/projectivyiconpack-latest.apk" } }
   ]
 };
 
@@ -175,7 +175,7 @@ function render(data) {
       '</div>' +
       '<div class="actions">' +
         '<a class="btn dl" href="' + esc(app.file) + '">Download</a>' +
-        (hasUpdate ? '<a class="btn update-btn" href="' + esc(app.latest.url) + '">&#9650; Update</a>' : '') +
+        (hasUpdate ? '<a class="btn update-btn" href="' + esc(app.latest.url) + '" target="_blank" rel="noopener">&#9650; Update v' + esc(latestVer) + '</a>' : '') +
         (hasUpdate && official ? '<a class="btn official-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Update (via Official)</a>' : '') +
       '</div>';
 
