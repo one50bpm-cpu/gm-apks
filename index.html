@@ -59,18 +59,16 @@
   }
   .size { color: var(--muted2); font-size: 10px; letter-spacing: 1px; margin-top: 5px; text-transform: uppercase; }
 
-  .vers { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 10px; letter-spacing: 1px; padding: 2px 9px; border-radius: 20px;
-    font-family: var(--mono); white-space: nowrap;
+  .vers { margin-top: 10px; display: flex; flex-direction: column; gap: 3px; }
+  .vline { font-size: 11.5px; letter-spacing: 0.3px; display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+  .vline .lbl { color: var(--muted2); }
+  .vline b { color: var(--text); font-weight: 600; }
+  .vline b.ov.new { color: var(--up); }
+  .newer {
+    color: var(--up); font-size: 9px; font-weight: 600; letter-spacing: 1px;
+    border: 1px solid rgba(16,185,129,0.5); background: rgba(16,185,129,0.1);
+    border-radius: 20px; padding: 1px 7px;
   }
-  .pill .lbl { color: var(--muted2); }
-  .pill.cur { border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,0.02); }
-  .pill.lat { border: 1px solid rgba(100,116,139,0.35); color: var(--muted2); background: transparent; }
-  .pill.lat.new { border-color: rgba(16,185,129,0.5); color: var(--up); background: rgba(16,185,129,0.08); }
-  .offlink { color: var(--muted2); font-size: 10px; letter-spacing: 0.5px; text-decoration: none; white-space: nowrap; }
-  .offlink:hover { color: var(--accent); }
 
   .actions { display: flex; flex-wrap: wrap; gap: 7px; }
   .btn {
@@ -81,10 +79,10 @@
   }
   .dl { background: var(--accent); color: #04141a; }
   .dl:hover { filter: brightness(1.1); }
+  .web-btn { background: transparent; color: var(--accent); border-color: rgba(34,211,238,0.4); }
+  .web-btn:hover { background: rgba(34,211,238,0.1); border-color: var(--accent); }
   .update-btn { background: rgba(16,185,129,0.1); color: var(--up); border-color: rgba(16,185,129,0.5); }
   .update-btn:hover { background: rgba(16,185,129,0.2); }
-  .official-btn { background: transparent; color: var(--muted2); border-color: var(--muted); }
-  .official-btn:hover { color: var(--accent); border-color: var(--accent); }
 
   footer { margin-top: 32px; color: var(--muted); font-size: 10px; letter-spacing: 1px; text-align: center; text-transform: uppercase; }
   footer a { color: var(--muted2); text-decoration: none; }
@@ -111,11 +109,11 @@
 var FALLBACK = {
   apps: [
     { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, official: "https://cinemahq.app",                                                 latest: { version: "8.5",    url: "https://chq-api.ddns.me/chqdl/release.apk" } },
-    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "https://netflyapp.com",                                                latest: { version: "3.0.5",  url: "https://netflyapp.com/file/netfly_tv.apk" } },
+    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "https://netflyapp.com",                                                latest: { version: "3.0.4",  url: "https://netflyapp.com/file/netfly_tv.apk" } },
     { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "https://reezntvapp.com",                                               latest: { version: "2.0.20", url: "https://reezntvapp.com" } },
     { name: "SmartTube",           version: "32.56",  file: "SmartTube-v32.56.apk",         size: 25046686, official: "https://github.com/yuliskov/SmartTube/releases/latest",                latest: { version: "32.56",  url: "https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk" } },
-    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "https://play.google.com/store/apps/details?id=com.spocky.projengmenu", latest: { version: "4.72",   url: "https://play.google.com/store/apps/details?id=com.spocky.projengmenu" } },
-    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "https://github.com/SicMundus86/ProjectivyIconPack",                      latest: { version: "1.1.9",  url: "https://github.com/SicMundus86/ProjectivyIconPack/raw/refs/heads/main/Latestrelease/projectivyiconpack-latest.apk" } }
+    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "",                                                                     latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
+    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "",                                                                     latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
   ]
 };
 
@@ -155,9 +153,6 @@ function render(data) {
     if (hasUpdate) updates++;
 
     var official = app.official || "";
-    var offlink = official
-      ? ' <a class="offlink" href="' + esc(official) + '" target="_blank" rel="noopener">&middot; Official &#8599;</a>'
-      : '';
 
     var card = document.createElement("div");
     card.className = "card";
@@ -167,16 +162,18 @@ function render(data) {
           '<div class="name">' + esc(app.name) + '</div>' +
           (app.size ? '<div class="size">' + fmtSize(app.size) + '</div>' : '') +
           '<div class="vers">' +
-            '<span class="pill cur"><span class="lbl">GITHUB</span> v' + esc(app.version) + '</span>' +
-            '<span class="pill lat' + (hasUpdate ? ' new' : '') + '"><span class="lbl">LATEST</span> v' + esc(latestVer) + '</span>' +
-            offlink +
+            '<div class="vline"><span class="lbl">Local version:</span> <b>v' + esc(app.version) + '</b></div>' +
+            '<div class="vline"><span class="lbl">Official version:</span> ' +
+              '<b class="ov' + (hasUpdate ? ' new' : '') + '">v' + esc(latestVer) + '</b>' +
+              (hasUpdate ? ' <span class="newer">NEWER</span>' : '') +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</div>' +
       '<div class="actions">' +
         '<a class="btn dl" href="' + esc(app.file) + '">Download</a>' +
+        (official ? '<a class="btn web-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Official Website</a>' : '') +
         (hasUpdate ? '<a class="btn update-btn" href="' + esc(app.latest.url) + '" target="_blank" rel="noopener">&#9650; Update v' + esc(latestVer) + '</a>' : '') +
-        (hasUpdate && official ? '<a class="btn official-btn" href="' + esc(official) + '" target="_blank" rel="noopener">Update (via Official)</a>' : '') +
       '</div>';
 
     list.appendChild(card);

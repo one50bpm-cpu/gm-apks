@@ -21,7 +21,7 @@
       "size": 65649883,
       "official": "https://netflyapp.com",
       "latest": {
-        "version": "3.0.5",
+        "version": "3.0.4",
         "url": "https://netflyapp.com/file/netfly_tv.apk"
       }
     },
@@ -55,10 +55,10 @@
       "version": "4.72",
       "file": "ProjectivyLauncher-v4.72.apk",
       "size": 11432750,
-      "official": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu",
+      "official": "",
       "latest": {
         "version": "4.72",
-        "url": "https://play.google.com/store/apps/details?id=com.spocky.projengmenu"
+        "url": "ProjectivyLauncher-v4.72.apk"
       }
     },
     {
@@ -67,10 +67,10 @@
       "version": "1.1.9",
       "file": "ProjectivyIconPack-v1.1.9.apk",
       "size": 17139097,
-      "official": "https://github.com/SicMundus86/ProjectivyIconPack",
+      "official": "",
       "latest": {
         "version": "1.1.9",
-        "url": "https://github.com/SicMundus86/ProjectivyIconPack/raw/refs/heads/main/Latestrelease/projectivyiconpack-latest.apk"
+        "url": "ProjectivyIconPack-v1.1.9.apk"
       }
     }
   ]
