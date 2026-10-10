@@ -43,7 +43,10 @@
   h1 .emoji-logo .boom { position: absolute; left: 50%; top: 50%; width: 2.5em; height: auto;
     transform: translate(-50%,-50%); z-index: 0; pointer-events: none;
     filter: drop-shadow(0 0 6px rgba(255,120,20,0.5)); }
-  h1 .emoji-logo .arms { position: relative; z-index: 1; letter-spacing: -0.06em; }
+  h1 .emoji-logo .arms { position: relative; z-index: 1; letter-spacing: -0.06em;
+    text-shadow:
+      -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+      0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000, 1px 0 0 #000; }
   .status {
     color: var(--muted2); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
     margin: 0 0 18px; min-height: 1em; text-align: center;
