@@ -44,27 +44,31 @@
   header { margin-bottom: 28px; }
   h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.02em; }
   .sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
-  .list { display: grid; gap: 14px; }
+  .list { display: grid; gap: 8px; }
   .card {
     background: var(--card); border: 1px solid var(--card-border);
-    border-radius: 12px; padding: 18px 20px;
+    border-radius: 12px; padding: 12px 16px;
   }
-  .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
   .meta { min-width: 0; }
   .name { font-weight: 600; font-size: 1.05rem; word-break: break-word; }
-  .size { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
-  .dl {
-    flex: none; text-decoration: none; background: var(--accent); color: var(--accent-ink);
-    font-weight: 600; font-size: 0.9rem; padding: 9px 16px; border-radius: 8px; white-space: nowrap;
+  .vers { margin-top: 3px; display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 0.82rem; }
+  .vers .k { color: var(--muted); }
+  .vers .cur b { color: var(--text); font-weight: 600; }
+  .vers .lat b { color: var(--muted); font-weight: 600; }
+  .vers .lat.new b { color: var(--update-ink); font-weight: 700; }
+  .size { color: var(--muted); font-size: 0.78rem; margin-top: 3px; }
+  .actions { flex: none; display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+  .btn {
+    text-decoration: none; text-align: center; font-weight: 600; font-size: 0.88rem;
+    padding: 8px 15px; border-radius: 8px; white-space: nowrap;
   }
+  .dl { background: var(--accent); color: var(--accent-ink); }
   .dl:hover { filter: brightness(1.08); }
-  .update {
-    margin-top: 14px; padding: 10px 14px; border-radius: 9px;
-    background: var(--update-bg); border: 1px solid var(--update-border);
-    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  .update-btn {
+    background: var(--update-bg); color: var(--update-ink); border: 1px solid var(--update-border);
   }
-  .update .txt { color: var(--update-ink); font-size: 0.88rem; font-weight: 600; }
-  .update a { color: var(--update-ink); font-weight: 700; white-space: nowrap; }
+  .update-btn:hover { filter: brightness(1.08); }
   .codebox {
     display: flex; align-items: center; gap: 16px; text-decoration: none;
     background: var(--card); border: 1px solid var(--accent);
@@ -154,28 +158,29 @@ function render(data) {
     var card = document.createElement("div");
     card.className = "card";
 
+    var latestVer = (app.latest && app.latest.version) ? app.latest.version : app.version;
+    var hasUpdate = !!(app.latest && app.latest.version && app.latest.url &&
+                       cmpVer(app.latest.version, app.version) > 0);
+    if (hasUpdate) updates++;
+
     var row = document.createElement("div");
     row.className = "row";
     row.innerHTML =
       '<div class="meta">' +
         '<div class="name">' + esc(app.name) + '</div>' +
-        '<div class="size">v' + esc(app.version) +
-          (app.size ? ' &middot; ' + fmtSize(app.size) : '') + '</div>' +
+        '<div class="vers">' +
+          '<span class="cur"><span class="k">Current (GitHub):</span> <b>v' + esc(app.version) + '</b></span>' +
+          '<span class="lat' + (hasUpdate ? ' new' : '') + '">' +
+            '<span class="k">Latest found:</span> <b>v' + esc(latestVer) + '</b>' +
+          '</span>' +
+        '</div>' +
+        (app.size ? '<div class="size">' + fmtSize(app.size) + '</div>' : '') +
       '</div>' +
-      '<a class="dl" href="' + esc(app.file) + '">Download</a>';
+      '<div class="actions">' +
+        '<a class="btn dl" href="' + esc(app.file) + '">Download</a>' +
+        (hasUpdate ? '<a class="btn update-btn" href="' + esc(app.latest.url) + '">&#9650; Update</a>' : '') +
+      '</div>';
     card.appendChild(row);
-
-    // Show an update link when latest is newer than the bundled version.
-    if (app.latest && app.latest.version && app.latest.url &&
-        cmpVer(app.latest.version, app.version) > 0) {
-      updates++;
-      var up = document.createElement("div");
-      up.className = "update";
-      up.innerHTML =
-        '<span class="txt">&#9650; Update available &mdash; v' + esc(app.latest.version) + '</span>' +
-        '<a href="' + esc(app.latest.url) + '">Get the updated version &rarr;</a>';
-      card.appendChild(up);
-    }
 
     list.appendChild(card);
   });
