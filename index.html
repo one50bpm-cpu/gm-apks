@@ -40,8 +40,9 @@
   }
   h1 .code { color: var(--accent); font-weight: 600; }
   h1 .emoji-logo { position: relative; display: inline-block; margin-right: 10px; vertical-align: -0.18em; line-height: 1; }
-  h1 .emoji-logo .fire { position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%) scale(1.75);
-    z-index: 0; opacity: 0.95; filter: drop-shadow(0 0 5px rgba(255,120,20,0.6)); pointer-events: none; }
+  h1 .emoji-logo .boom { position: absolute; left: 50%; top: 50%; width: 2.5em; height: auto;
+    transform: translate(-50%,-50%); z-index: 0; pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(255,120,20,0.5)); }
   h1 .emoji-logo .arms { position: relative; z-index: 1; letter-spacing: -0.06em; }
   .status {
     color: var(--muted2); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
@@ -100,7 +101,7 @@
 <body>
   <div class="wrap">
     <header>
-      <h1><span class="emoji-logo"><span class="fire">🔥</span><span class="arms">🤜🏻🤛🏻</span></span> GM apks <span class="code">&middot; 7934617</span></h1>
+      <h1><span class="emoji-logo"><img class="boom" src="explosion.webp" alt="" aria-hidden="true"><span class="arms">🤜🏻🤛🏻</span></span> GM apks <span class="code">&middot; 7934617</span></h1>
     </header>
 
     <div class="list" id="list"></div>
