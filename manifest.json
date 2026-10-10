@@ -92,13 +92,13 @@
     {
       "id": "sportzxlive",
       "name": "SportzXLive",
-      "version": "3.1",
-      "file": "",
-      "size": 0,
+      "version": "3.2",
+      "file": "SportzXLive-v3.2.apk",
+      "size": 20884286,
       "official": "https://sportzxlive.com/download/",
       "direct": "https://pub-da7a734dcc5649388b83d515f2c87182.r2.dev/SportzX_3.1v.apk",
       "latest": {
-        "version": "3.1",
+        "version": "3.2",
         "url": "https://sportzxlive.com/download/"
       }
     },
@@ -106,8 +106,8 @@
       "id": "protonvpn",
       "name": "Proton VPN",
       "version": "5.20.57.0",
-      "file": "",
-      "size": 0,
+      "file": "ProtonVPN-v5.20.57.0.apk",
+      "size": 64238953,
       "official": "https://protonvpn.com/download-android",
       "direct": "https://github.com/ProtonVPN/android-app/releases/latest",
       "latest": {
