@@ -7,6 +7,7 @@
       "version": "8.5",
       "file": "CinemaHQ-v8.5.apk",
       "size": 55088558,
+      "official": "",
       "latest": { "version": "8.5", "url": "CinemaHQ-v8.5.apk" }
     },
     {
@@ -15,6 +16,7 @@
       "version": "3.0.4",
       "file": "Netfly-v3.0.4-TV.apk",
       "size": 65649883,
+      "official": "",
       "latest": { "version": "3.0.4", "url": "Netfly-v3.0.4-TV.apk" }
     },
     {
@@ -23,6 +25,7 @@
       "version": "2.0.20",
       "file": "Reezn-v2.0.20.apk",
       "size": 35427128,
+      "official": "",
       "latest": { "version": "2.0.20", "url": "Reezn-v2.0.20.apk" }
     },
     {
@@ -31,6 +34,7 @@
       "version": "2.0.4",
       "file": "Downloader-v2.0.4.apk",
       "size": 10856724,
+      "official": "",
       "latest": { "version": "2.0.4", "url": "Downloader-v2.0.4.apk" }
     },
     {
@@ -39,6 +43,7 @@
       "version": "4.72",
       "file": "ProjectivyLauncher-v4.72.apk",
       "size": 11432750,
+      "official": "",
       "latest": { "version": "4.72", "url": "ProjectivyLauncher-v4.72.apk" }
     },
     {
@@ -47,6 +52,7 @@
       "version": "1.1.9",
       "file": "ProjectivyIconPack-v1.1.9.apk",
       "size": 17139097,
+      "official": "",
       "latest": { "version": "1.1.9", "url": "ProjectivyIconPack-v1.1.9.apk" }
     }
   ]

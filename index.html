@@ -69,6 +69,11 @@
     background: var(--update-bg); color: var(--update-ink); border: 1px solid var(--update-border);
   }
   .update-btn:hover { filter: brightness(1.08); }
+  .official-btn {
+    background: transparent; color: var(--update-ink); border: 1px solid var(--update-border);
+    font-size: 0.82rem;
+  }
+  .official-btn:hover { background: var(--update-bg); }
   .codebox {
     display: flex; align-items: center; gap: 16px; text-decoration: none;
     background: var(--card); border: 1px solid var(--accent);
@@ -107,12 +112,12 @@
 // (e.g. opened as a local file). manifest.json, when reachable, overrides this.
 var FALLBACK = {
   apps: [
-    { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, latest: { version: "8.5",    url: "CinemaHQ-v8.5.apk" } },
-    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, latest: { version: "3.0.4",  url: "Netfly-v3.0.4-TV.apk" } },
-    { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, latest: { version: "2.0.20", url: "Reezn-v2.0.20.apk" } },
-    { name: "Downloader",          version: "2.0.4",  file: "Downloader-v2.0.4.apk",        size: 10856724, latest: { version: "2.0.4",  url: "Downloader-v2.0.4.apk" } },
-    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
-    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
+    { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, official: "", latest: { version: "8.5",    url: "CinemaHQ-v8.5.apk" } },
+    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "", latest: { version: "3.0.4",  url: "Netfly-v3.0.4-TV.apk" } },
+    { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "", latest: { version: "2.0.20", url: "Reezn-v2.0.20.apk" } },
+    { name: "Downloader",          version: "2.0.4",  file: "Downloader-v2.0.4.apk",        size: 10856724, official: "", latest: { version: "2.0.4",  url: "Downloader-v2.0.4.apk" } },
+    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "", latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
+    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "", latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
   ]
 };
 
@@ -170,6 +175,7 @@ function render(data) {
       '<div class="actions">' +
         '<a class="btn dl" href="' + esc(app.file) + '">Download</a>' +
         (hasUpdate ? '<a class="btn update-btn" href="' + esc(app.latest.url) + '">&#9650; Update</a>' : '') +
+        (hasUpdate && app.official ? '<a class="btn official-btn" href="' + esc(app.official) + '" target="_blank" rel="noopener">Update (via Official link)</a>' : '') +
       '</div>';
     card.appendChild(row);
 
