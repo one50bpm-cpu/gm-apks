@@ -13,66 +13,59 @@
     --muted: #9aa3b2;
     --accent: #4f9dff;
     --accent-ink: #ffffff;
+    --update-bg: #15351f;
+    --update-border: #2f6b3f;
+    --update-ink: #7ee29a;
   }
-  :root:not([data-theme="dark"]) {
-    @media (prefers-color-scheme: light) {
-      --bg: #f5f6f8;
-      --card: #ffffff;
-      --card-border: #e2e5ea;
-      --text: #1a1d24;
-      --muted: #5a6474;
-      --accent: #1565d8;
-      --accent-ink: #ffffff;
+  :root[data-theme="dark"] {
+    --bg: #0f1115; --card: #1a1d24; --card-border: #2a2f3a; --text: #e8eaed;
+    --muted: #9aa3b2; --accent: #4f9dff; --accent-ink: #ffffff;
+    --update-bg: #15351f; --update-border: #2f6b3f; --update-ink: #7ee29a;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f5f6f8; --card: #ffffff; --card-border: #e2e5ea; --text: #1a1d24;
+      --muted: #5a6474; --accent: #1565d8; --accent-ink: #ffffff;
+      --update-bg: #e7f6ec; --update-border: #9bd6ac; --update-ink: #1b7a38;
     }
   }
   :root[data-theme="light"] {
-    --bg: #f5f6f8;
-    --card: #ffffff;
-    --card-border: #e2e5ea;
-    --text: #1a1d24;
-    --muted: #5a6474;
-    --accent: #1565d8;
-    --accent-ink: #ffffff;
+    --bg: #f5f6f8; --card: #ffffff; --card-border: #e2e5ea; --text: #1a1d24;
+    --muted: #5a6474; --accent: #1565d8; --accent-ink: #ffffff;
+    --update-bg: #e7f6ec; --update-border: #9bd6ac; --update-ink: #1b7a38;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    margin: 0; background: var(--bg); color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    padding: 0 16px;
+    line-height: 1.5; padding: 0 16px;
   }
   .wrap { max-width: 640px; margin: 0 auto; padding: 48px 0 64px; }
-  header { margin-bottom: 32px; }
+  header { margin-bottom: 28px; }
   h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.02em; }
   .sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
   .list { display: grid; gap: 14px; }
   .card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 18px 20px;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 18px 20px;
   }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .meta { min-width: 0; }
   .name { font-weight: 600; font-size: 1.05rem; word-break: break-word; }
   .size { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
   .dl {
-    flex: none;
-    text-decoration: none;
-    background: var(--accent);
-    color: var(--accent-ink);
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 9px 16px;
-    border-radius: 8px;
-    white-space: nowrap;
+    flex: none; text-decoration: none; background: var(--accent); color: var(--accent-ink);
+    font-weight: 600; font-size: 0.9rem; padding: 9px 16px; border-radius: 8px; white-space: nowrap;
   }
   .dl:hover { filter: brightness(1.08); }
+  .update {
+    margin-top: 14px; padding: 10px 14px; border-radius: 9px;
+    background: var(--update-bg); border: 1px solid var(--update-border);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .update .txt { color: var(--update-ink); font-size: 0.88rem; font-weight: 600; }
+  .update a { color: var(--update-ink); font-weight: 700; white-space: nowrap; }
+  .status { color: var(--muted); font-size: 0.8rem; margin: 0 0 20px; min-height: 1em; }
   footer { margin-top: 36px; color: var(--muted); font-size: 0.8rem; text-align: center; }
   footer a { color: var(--accent); }
 </style>
@@ -84,59 +77,114 @@
       <p class="sub">Android APK downloads. Tap an app to download the .apk file.</p>
     </header>
 
-    <div class="list">
-      <div class="card">
-        <div class="meta">
-          <div class="name">CinemaHQ</div>
-          <div class="size">v8.5 &middot; 55.1 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/CinemaHQ-v8.5.apk">Download</a>
-      </div>
-
-      <div class="card">
-        <div class="meta">
-          <div class="name">Netfly (TV)</div>
-          <div class="size">v3.0.4 &middot; 65.6 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Netfly-v3.0.4-TV.apk">Download</a>
-      </div>
-
-      <div class="card">
-        <div class="meta">
-          <div class="name">Reezn</div>
-          <div class="size">v2.0.20 &middot; 35.4 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Reezn-v2.0.20.apk">Download</a>
-      </div>
-
-      <div class="card">
-        <div class="meta">
-          <div class="name">Downloader</div>
-          <div class="size">v2.0.4 &middot; 10.9 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/Downloader-v2.0.4.apk">Download</a>
-      </div>
-
-      <div class="card">
-        <div class="meta">
-          <div class="name">Projectivy Launcher</div>
-          <div class="size">v4.72 &middot; 11.4 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/ProjectivyLauncher-v4.72.apk">Download</a>
-      </div>
-
-      <div class="card">
-        <div class="meta">
-          <div class="name">Projectivy Icon Pack</div>
-          <div class="size">v1.1.9 &middot; 17.1 MB</div>
-        </div>
-        <a class="dl" href="https://github.com/one50bpm-cpu/gm-apks/raw/main/ProjectivyIconPack-v1.1.9.apk">Download</a>
-      </div>
-    </div>
+    <p class="status" id="status">Loading&hellip;</p>
+    <div class="list" id="list"></div>
 
     <footer>
       Hosted on <a href="https://github.com/one50bpm-cpu/gm-apks">GitHub</a>.
     </footer>
   </div>
+
+<script>
+// Baked-in fallback so the page still works if manifest.json can't be fetched
+// (e.g. opened as a local file). manifest.json, when reachable, overrides this.
+var FALLBACK = {
+  apps: [
+    { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, latest: { version: "8.5",    url: "CinemaHQ-v8.5.apk" } },
+    { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, latest: { version: "3.0.4",  url: "Netfly-v3.0.4-TV.apk" } },
+    { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, latest: { version: "2.0.20", url: "Reezn-v2.0.20.apk" } },
+    { name: "Downloader",          version: "2.0.4",  file: "Downloader-v2.0.4.apk",        size: 10856724, latest: { version: "2.0.4",  url: "Downloader-v2.0.4.apk" } },
+    { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
+    { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
+  ]
+};
+
+function fmtSize(b) {
+  if (!b && b !== 0) return "";
+  return (b / 1e6).toFixed(1) + " MB";
+}
+
+// Compare dotted version strings numerically; returns 1 if a>b, -1 if a<b, 0 if equal.
+function cmpVer(a, b) {
+  var pa = String(a).split("."), pb = String(b).split(".");
+  var n = Math.max(pa.length, pb.length);
+  for (var i = 0; i < n; i++) {
+    var x = parseInt(pa[i] || "0", 10), y = parseInt(pb[i] || "0", 10);
+    if (isNaN(x)) x = 0; if (isNaN(y)) y = 0;
+    if (x > y) return 1;
+    if (x < y) return -1;
+  }
+  return 0;
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+
+function render(data) {
+  var list = document.getElementById("list");
+  list.innerHTML = "";
+  var updates = 0;
+
+  data.apps.forEach(function (app) {
+    var card = document.createElement("div");
+    card.className = "card";
+
+    var row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML =
+      '<div class="meta">' +
+        '<div class="name">' + esc(app.name) + '</div>' +
+        '<div class="size">v' + esc(app.version) +
+          (app.size ? ' &middot; ' + fmtSize(app.size) : '') + '</div>' +
+      '</div>' +
+      '<a class="dl" href="' + esc(app.file) + '">Download</a>';
+    card.appendChild(row);
+
+    // Show an update link when latest is newer than the bundled version.
+    if (app.latest && app.latest.version && app.latest.url &&
+        cmpVer(app.latest.version, app.version) > 0) {
+      updates++;
+      var up = document.createElement("div");
+      up.className = "update";
+      up.innerHTML =
+        '<span class="txt">&#9650; Update available &mdash; v' + esc(app.latest.version) + '</span>' +
+        '<a href="' + esc(app.latest.url) + '">Get the updated version &rarr;</a>';
+      card.appendChild(up);
+    }
+
+    list.appendChild(card);
+  });
+
+  var status = document.getElementById("status");
+  if (updates > 0) {
+    status.textContent = updates + " update" + (updates === 1 ? "" : "s") + " available.";
+  } else {
+    status.textContent = "All apps are up to date.";
+  }
+}
+
+// Try the live manifest first; fall back to the baked-in list on any failure.
+(function () {
+  var done = false;
+  function go(data) { if (!done) { done = true; render(data); } }
+
+  try {
+    fetch("manifest.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) {
+        if (d && d.apps && d.apps.length) go(d); else go(FALLBACK);
+      })
+      .catch(function () { go(FALLBACK); });
+  } catch (e) {
+    go(FALLBACK);
+  }
+
+  // Safety net if fetch hangs or isn't available.
+  setTimeout(function () { go(FALLBACK); }, 4000);
+})();
+</script>
 </body>
 </html>
