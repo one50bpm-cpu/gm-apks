@@ -40,11 +40,12 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5; padding: 0 16px;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 0 64px; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 48px 0 64px; }
   header { margin-bottom: 28px; }
   h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.02em; }
   .sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
-  .list { display: grid; gap: 8px; }
+  .list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  @media (max-width: 520px) { .list { grid-template-columns: 1fr; } }
   .card {
     background: var(--card); border: 1px solid var(--card-border);
     border-radius: 12px; padding: 12px 16px;
@@ -115,7 +116,7 @@ var FALLBACK = {
     { name: "CinemaHQ",            version: "8.5",    file: "CinemaHQ-v8.5.apk",            size: 55088558, official: "", latest: { version: "8.5",    url: "CinemaHQ-v8.5.apk" } },
     { name: "Netfly (TV)",         version: "3.0.4",  file: "Netfly-v3.0.4-TV.apk",         size: 65649883, official: "", latest: { version: "3.0.4",  url: "Netfly-v3.0.4-TV.apk" } },
     { name: "Reezn",               version: "2.0.20", file: "Reezn-v2.0.20.apk",            size: 35427128, official: "", latest: { version: "2.0.20", url: "Reezn-v2.0.20.apk" } },
-    { name: "Downloader",          version: "2.0.4",  file: "Downloader-v2.0.4.apk",        size: 10856724, official: "", latest: { version: "2.0.4",  url: "Downloader-v2.0.4.apk" } },
+    { name: "SmartTube",           version: "32.56",  file: "SmartTube-v32.56.apk",         size: 25046686, official: "", latest: { version: "32.56",  url: "SmartTube-v32.56.apk" } },
     { name: "Projectivy Launcher", version: "4.72",   file: "ProjectivyLauncher-v4.72.apk", size: 11432750, official: "", latest: { version: "4.72",   url: "ProjectivyLauncher-v4.72.apk" } },
     { name: "Projectivy Icon Pack",version: "1.1.9",  file: "ProjectivyIconPack-v1.1.9.apk",size: 17139097, official: "", latest: { version: "1.1.9",  url: "ProjectivyIconPack-v1.1.9.apk" } }
   ]

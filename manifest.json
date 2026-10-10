@@ -29,13 +29,13 @@
       "latest": { "version": "2.0.20", "url": "Reezn-v2.0.20.apk" }
     },
     {
-      "id": "downloader",
-      "name": "Downloader",
-      "version": "2.0.4",
-      "file": "Downloader-v2.0.4.apk",
-      "size": 10856724,
+      "id": "smarttube",
+      "name": "SmartTube",
+      "version": "32.56",
+      "file": "SmartTube-v32.56.apk",
+      "size": 25046686,
       "official": "",
-      "latest": { "version": "2.0.4", "url": "Downloader-v2.0.4.apk" }
+      "latest": { "version": "32.56", "url": "SmartTube-v32.56.apk" }
     },
     {
       "id": "projectivy-launcher",
